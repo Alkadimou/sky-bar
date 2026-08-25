@@ -94,19 +94,6 @@ button { font: inherit; cursor: pointer; }
   border-radius: 2px;
 }
 
-.skip-link {
-  position: absolute;
-  top: -48px;
-  left: 16px;
-  z-index: 4000;
-  padding: 0.6rem 1rem;
-  background: var(--bg-primary);
-  border: 1px solid var(--gold-core);
-  border-radius: 8px;
-  color: var(--gold-bright);
-  transition: top 0.2s ease;
-}
-.skip-link:focus { top: 12px; }
 
 .container {
   width: min(var(--container), 100% - var(--gutter) * 2);
