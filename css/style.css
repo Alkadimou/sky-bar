@@ -145,9 +145,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero__title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  margin-bottom: 0.5rem;
   color: var(--text-primary);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  animation: heroTitleIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero__title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent-gold);
+  margin: 1rem auto 0;
 }
 
 .hero__subtitle {
@@ -155,6 +167,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto 2.5rem;
+  animation: heroSubtitleIn 1s ease-out 0.6s both;
+}
+
+@keyframes heroTitleIn {
+  from { opacity: 0; transform: translateY(30px); letter-spacing: 20px; }
+  to   { opacity: 1; transform: translateY(0);    letter-spacing: 8px; }
+}
+
+@keyframes heroSubtitleIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .hero__scroll-arrow {
@@ -181,8 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Bento Grid System for Sections */
 .menu-section,
-.gallery-section,
-.contact-section {
+.gallery-section {
   padding: 8rem 12%;
   min-height: 100vh;
   display: flex;
@@ -323,92 +345,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
-.gallery-section__overlay {
-  display: none;
-}
 
-.gallery-section__text {
-  color: var(--text-primary);
-  font-size: 1.2rem;
-  transform: translateY(20px);
-  transition: transform var(--transition-fast);
-}
-
-.gallery-section__item:hover .gallery-section__text {
-  transform: translateY(0);
-}
-
-/* Contact Section */
-.contact-section__container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: var(--bg-surface);
-  border-radius: 24px;
-  padding: 4rem;
-  border: 1px solid var(--glass-border);
-  text-align: center;
-}
-
-.contact-section__info {
-  margin-bottom: 3rem;
-}
-
-.contact-section__info p {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.contact-section__form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-section__input,
-.contact-section__textarea {
-  width: 100%;
-  background: var(--bg-darker);
-  border: 1px solid var(--glass-border);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  color: var(--text-primary);
-  font-family: inherit;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.contact-section__input:focus,
-.contact-section__textarea:focus {
-  outline: none;
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
-}
-
-.contact-section__textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.contact-section__submit {
-  align-self: center;
-  padding: 1rem 3rem;
-  background-color: var(--accent-gold);
-  color: var(--bg-dark);
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-weight: 500;
-}
-
-.contact-section__submit:hover {
-  background-color: #e6c863;
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-  transform: translateY(-2px);
-}
 
 /* Footer Section */
 .footer {
@@ -617,4 +554,127 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes zoomIn {
   from {transform:scale(0.95); opacity:0} 
   to {transform:scale(1); opacity:1}
+}
+
+/* ============================================
+   MOBILE — sotto i 768px
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Header compatto */
+  .header {
+    padding: 1rem 5%;
+  }
+
+  .header__logo-img {
+    height: 40px;
+  }
+
+  /* Hamburger visibile e cliccabile */
+  .header__menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1100;
+  }
+
+  .header__menu-icon,
+  .header__menu-icon::before,
+  .header__menu-icon::after {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .header__menu-icon::before,
+  .header__menu-icon::after {
+    content: '';
+  }
+
+  .header__menu-icon::before { transform: translateY(-8px); }
+  .header__menu-icon::after  { transform: translateY(6px); }
+
+  /* Animazione a X quando aperto */
+  .header__menu-toggle--active .header__menu-icon { transform: rotate(45deg); }
+  .header__menu-toggle--active .header__menu-icon::before { transform: rotate(-90deg); }
+  .header__menu-toggle--active .header__menu-icon::after { opacity: 0; }
+
+  /* Menu a tendina full-width */
+  .header__nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--bg-darker);
+    border-bottom: 1px solid var(--glass-border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    z-index: 999;
+  }
+
+  .header__nav--active {
+    max-height: 320px;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+  }
+
+  .header__nav-item {
+    text-align: center;
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  /* Hero */
+  .hero__title { letter-spacing: 4px; }
+  @keyframes heroTitleIn {
+    from { opacity: 0; transform: translateY(30px); letter-spacing: 10px; }
+    to   { opacity: 1; transform: translateY(0);    letter-spacing: 4px; }
+  }
+  .hero__subtitle { font-size: 1rem; padding: 0 1.5rem; }
+
+  /* Sezioni più compatte */
+  .menu-section,
+  .gallery-section {
+    padding: 5rem 6%;
+    min-height: auto;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Card menu larghe quanto lo schermo meno i margini */
+  .menu-section__card {
+    min-width: min(85vw, 340px);
+    padding: 1.8rem;
+  }
+
+  /* Galleria: colonne più strette */
+  .gallery-section__grid {
+    grid-template-rows: repeat(2, 220px);
+    grid-auto-columns: 180px;
+    gap: 0.8rem;
+  }
+}
+
+/* Schermi molto piccoli */
+@media (max-width: 400px) {
+  .gallery-section__grid {
+    grid-template-rows: repeat(2, 180px);
+    grid-auto-columns: 150px;
+  }
 }
