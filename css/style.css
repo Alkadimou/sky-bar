@@ -404,6 +404,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 @media (max-width: 860px) {
   .hero__badge { display: none; }
   .hero__frame { height: min(44svh, 420px); width: auto; bottom: 6.5rem; }
+  /* Al primo caricamento l'hero lascia spazio esatto per il marquee
+     dentro la prima schermata (sopra la barra azioni fissa) */
+  .hero {
+    min-height: calc(100svh - 140px);
+    padding-top: calc(76px + 2vh);
+  }
 }
 
 /* Scroll indicator */
