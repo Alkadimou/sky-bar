@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Bar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="#home" class="header__logo-link">
+                <img src="assets/logo.png" alt="Sky Bar Logo" class="header__logo-img">
+            </a>
+            <button class="header__menu-toggle" aria-label="Toggle menu">
+                <span class="header__menu-icon"></span>
+            </button>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#home" class="header__nav-link">Home</a></li>
+                    <li class="header__nav-item"><a href="#menu" class="header__nav-link">Menu</a></li>
+                    <li class="header__nav-item"><a href="#gallery" class="header__nav-link">Gallery</a></li>
+                    <li class="header__nav-item"><a href="#contact" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <video class="hero__video-bg" autoplay muted loop playsinline poster="assets/hero.jpg">
+                <source src="assets/hero_video.mp4" type="video/mp4">
+            </video>
+            <div class="hero__overlay"></div>
+            <div class="hero__content"></div>
+            <a href="#menu" class="hero__scroll-arrow" aria-label="Scorri verso il basso">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <div class="menu-section__container">
+                <h2 class="section-title">Il Nostro Menu</h2>
+                <div class="menu-section__grid">
+                    <div class="menu-section__card">
+                        <h3 class="menu-section__category">I Grandi Classici</h3>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Gin Tonic / Gin Lemon</div>
+                                <div class="menu-section__item-desc">Con selezione speciale di Gin Premium</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 10</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Americano</div>
+                                <div class="menu-section__item-desc">Campari, Vermouth Rosso, Soda</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Negroni</div>
+                                <div class="menu-section__item-desc">Gin, Campari, Vermouth Rosso</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Spritz</div>
+                                <div class="menu-section__item-desc">Aperol o Campari, Prosecco, Soda</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 6</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Quattro Bianchi</div>
+                                <div class="menu-section__item-desc">Vodka, Gin, Rum, Tequila (Disponibile anche alla Fragola)</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section__card">
+                        <h3 class="menu-section__category">Mojito & Margarita</h3>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Mojito Selection</div>
+                                <div class="menu-section__item-desc">Classico, Fragola o Passion Fruit</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Mojito Fidel</div>
+                                <div class="menu-section__item-desc">Rum, lime, zucchero, menta e birra Corona</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 10</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Classic Margarita</div>
+                                <div class="menu-section__item-desc">Tequila, succo di limone e liquore arancia</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Fruity Margarita</div>
+                                <div class="menu-section__item-desc">Tequila, lime, zucchero e purea (Mango o Fragola)</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section__card">
+                        <h3 class="menu-section__category">Tropical & Fresh</h3>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Piña Colada</div>
+                                <div class="menu-section__item-desc">Rum bianco, succo d'ananas, crema di cocco</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Caipirinha / Caipiroska</div>
+                                <div class="menu-section__item-desc">Cachaça o Vodka, lime pestato, zucchero di canna</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Daiquiri Selection</div>
+                                <div class="menu-section__item-desc">Rum bianco, lime, zucchero (Classico o Fragola)</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Laguna Blu</div>
+                                <div class="menu-section__item-desc">Vodka, blue curaçao, sprite e ananas</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section__card">
+                        <h3 class="menu-section__category">Proposte dello Chef (Tropical)</h3>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Mai Tai</div>
+                                <div class="menu-section__item-desc">Rum chiaro e scuro, orange curaçao, orzata, lime</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 8</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Sex on the Beach</div>
+                                <div class="menu-section__item-desc">Vodka, liquore alla pesca, cranberry, succo d'arancia</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                        <div class="menu-section__item">
+                            <div>
+                                <div class="menu-section__item-name">Tequila Sunrise</div>
+                                <div class="menu-section__item-desc">Tequila, succo d'arancia, sciroppo di granatina</div>
+                            </div>
+                            <div class="menu-section__item-price">€ 7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="gallery-section__container">
+                <h2 class="section-title">Galleria</h2>
+                <div class="gallery-section__grid">
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_01.jpg" alt="Sky Bar Gallery 01" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 01</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_02.jpg" alt="Sky Bar Gallery 02" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 02</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_03.jpg" alt="Sky Bar Gallery 03" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 03</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_04.jpg" alt="Sky Bar Gallery 04" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 04</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_05.jpg" alt="Sky Bar Gallery 05" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 05</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_06.jpg" alt="Sky Bar Gallery 06" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 06</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_07.jpg" alt="Sky Bar Gallery 07" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 07</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_08.jpg" alt="Sky Bar Gallery 08" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 08</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_09.jpg" alt="Sky Bar Gallery 09" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 09</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_10.jpg" alt="Sky Bar Gallery 10" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 10</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_11.jpg" alt="Sky Bar Gallery 11" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 11</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_12.jpg" alt="Sky Bar Gallery 12" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 12</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_13.jpg" alt="Sky Bar Gallery 13" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 13</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_14.jpg" alt="Sky Bar Gallery 14" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 14</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_15.jpg" alt="Sky Bar Gallery 15" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 15</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_16.jpg" alt="Sky Bar Gallery 16" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 16</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_17.jpg" alt="Sky Bar Gallery 17" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 17</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_18.jpg" alt="Sky Bar Gallery 18" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 18</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_19.jpg" alt="Sky Bar Gallery 19" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 19</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_20.jpg" alt="Sky Bar Gallery 20" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 20</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_21.jpg" alt="Sky Bar Gallery 21" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 21</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_22.jpg" alt="Sky Bar Gallery 22" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 22</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_23.jpg" alt="Sky Bar Gallery 23" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 23</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_24.jpg" alt="Sky Bar Gallery 24" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 24</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_25.jpg" alt="Sky Bar Gallery 25" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 25</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_26.jpg" alt="Sky Bar Gallery 26" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 26</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_27.jpg" alt="Sky Bar Gallery 27" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 27</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_28.jpg" alt="Sky Bar Gallery 28" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 28</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_29.jpg" alt="Sky Bar Gallery 29" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 29</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_30.jpg" alt="Sky Bar Gallery 30" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 30</span></div>
+                    </div>
+                    <div class="gallery-section__item">
+                        <img src="assets/gallery_31.jpg" alt="Sky Bar Gallery 31" class="gallery-section__image">
+                        <div class="gallery-section__overlay"><span class="gallery-section__text">Sky Bar 31</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__col footer__brand">
+                    <img src="assets/logo.png" alt="Sky Bar Logo" class="footer__logo">
+                    <p class="footer__tagline">L'eleganza di Arezzo vista dall'alto.</p>
+                    <div class="footer__socials">
+                        <a href="https://www.instagram.com/skybar_02/" target="_blank" rel="noopener noreferrer" class="footer__social-link">Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="footer__col footer__contact-info">
+                    <h3 class="footer__heading">Contatti</h3>
+                    <p class="footer__text"><strong>Indirizzo:</strong><br>Via Margaritone 28/A, Arezzo (AR)</p>
+                    <p class="footer__text"><strong>Telefono:</strong><br><a href="tel:+393401942471" class="footer__link">340 194 2471</a></p>
+                </div>
+                
+                <div class="footer__col footer__hours">
+                    <h3 class="footer__heading">Orari</h3>
+                    <p class="footer__text"><strong>Lunedì - Venerdì:</strong><br>06:00 - 24:00</p>
+                    <p class="footer__text"><strong>Sabato - Domenica:</strong><br>06:00 - 02:00</p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__text-muted">&copy; 2026 Sky Bar. Tutti i diritti riservati.</p>
+                <p class="footer__text-muted footer__vat">P.IVA 02475150518</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox__close">&times;</span>
+        <img class="lightbox__content" id="lightbox-img" alt="Immagine ingrandita">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
