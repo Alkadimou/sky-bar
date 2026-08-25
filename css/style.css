@@ -290,7 +290,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   min-height: 92svh;
   display: grid;
   align-items: end;
+  align-content: end;
   overflow: clip;
+  /* clearance per l'header fisso: il contenuto non gli passa mai sotto */
+  padding-top: calc(84px + 3vh);
 }
 
 .hero__bg {
@@ -312,8 +315,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   left: 50%;
   bottom: clamp(4.5rem, 10vh, 7rem);
   transform: translateX(-50%);
-  width: min(340px, 62vw);
+  height: min(52svh, 580px);           /* mai più alta di metà pagina */
   aspect-ratio: 576 / 1024;
+  width: auto;
   border-radius: 160px 160px 18px 18px;
   overflow: hidden;
   border: 1px solid rgba(212, 175, 55, 0.4);
@@ -412,7 +416,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 @media (max-width: 860px) {
   .hero__badge { display: none; }
-  .hero__frame { width: min(240px, 58vw); bottom: 6.5rem; }
+  .hero__frame { height: min(44svh, 420px); width: auto; bottom: 6.5rem; }
 }
 
 /* Scroll indicator */
