@@ -12,8 +12,14 @@
 
   /* ---------- Header: stato compatto allo scroll ---------- */
   const header = document.querySelector('.site-header');
+  const logoMedal = document.querySelector('.header__logo img');
   let lastY = 0;
   function onScroll(y) {
+    // Logo-medaglia: torna gradualmente alle dimensioni originali scendendo
+    if (logoMedal) {
+      const prog = Math.min(Math.max(y / 280, 0), 1);
+      logoMedal.style.setProperty('--logo-s', (1 - prog).toFixed(3));
+    }
     if (!header) return;
     header.classList.toggle('is-scrolled', y > 40);
     // nasconde in discesa veloce, rivela in salita

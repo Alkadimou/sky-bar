@@ -177,12 +177,18 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   pointer-events: none;
 }
 .header__logo img {
+  /* --logo-s: 1 = medaglia al primo caricamento, 0 = agganciata all'header (46px).
+     JS lo interpola con lo scroll: il ritorno è graduale. */
+  --logo-s: 1;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(calc(-50% + 14px), -26%);
+  transform: translate(
+    calc(-50% + 14px * var(--logo-s)),
+    calc(-50% + 24% * var(--logo-s))
+  );
   max-width: none;   /* essenziale: senza questo, max-width:100% del reset lo cappa a 46px */
-  width: clamp(84px, 13.5svh, 124px);
+  width: calc(46px + (clamp(84px, 13.5svh, 124px) - 46px) * var(--logo-s));
   height: auto;
   border-radius: 50%;
   background: var(--bg-primary);
@@ -190,10 +196,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
     0 0 0 2px rgba(212, 175, 55, 0.45),
     0 18px 36px rgba(0, 0, 0, 0.55);
   pointer-events: auto;
-  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 .header__logo:hover img {
-  transform: translate(calc(-50% + 14px), -26%) scale(1.05) rotate(-5deg);
+  box-shadow:
+    0 0 0 2px rgba(212, 175, 55, 0.75),
+    0 22px 44px rgba(0, 0, 0, 0.65);
 }
 
 @media (max-width: 860px) {
