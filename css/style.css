@@ -3,6 +3,28 @@
    Caraibi × Centro Storico Toscano — da design_system.md
    ========================================================================== */
 
+/* ============================================================
+   FASCE DI SISTEMA (iOS): dipinte del colore del sito.
+   Qualsiasi contenuto passi sotto la status bar o sopra l'home
+   indicator resta coperto — soluzione indipendente dal layout.
+   ============================================================ */
+.safe-paint-top,
+.safe-paint-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 5000;              /* sopra tutto, anche header e menu */
+  background: var(--bg-primary);
+  pointer-events: none;
+}
+.safe-paint-top { top: 0; height: env(safe-area-inset-top); }
+.safe-paint-bottom { bottom: 0; height: env(safe-area-inset-bottom); }
+
+@media (min-width: 861px) {
+  .safe-paint-top,
+  .safe-paint-bottom { display: none; }   /* solo mobile/tablet */
+}
+
 /* ---------- Token ---------- */
 :root {
   /* Fondi */
