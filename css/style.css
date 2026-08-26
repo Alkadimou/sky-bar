@@ -166,8 +166,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
    l'header si estende fino in cima ma il suo CONTENUTO resta sotto la status bar */
 .site-header { padding-top: env(safe-area-inset-top); }
 
+/* Quasi opaco: su iOS il contenuto che passa sotto non deve essere
+   leggibile accanto all'orologio della status bar */
 .site-header.is-scrolled {
-  background: rgba(14, 12, 10, 0.72);
+  background: rgba(14, 12, 10, 0.96);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom-color: var(--border-subtle);
@@ -1136,7 +1138,7 @@ html.nav-lock .site-header {
     display: flex;
     gap: 0.7rem;
     padding: 0.65rem var(--gutter) calc(0.65rem + env(safe-area-inset-bottom));
-    background: rgba(14, 12, 10, 0.82);
+    background: rgba(14, 12, 10, 0.97);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
     border-top: 1px solid var(--border-subtle);
