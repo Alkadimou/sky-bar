@@ -557,13 +557,15 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   gap: clamp(2rem, 6vw, 5rem);
   align-items: start;
 }
+/* Paragrafo manifesto: taglia di lettura (non display), entra in colonna */
 .manifest__text p {
   font-family: var(--font-display);
-  font-size: var(--fs-display-md);
+  font-size: clamp(1.125rem, 0.95rem + 0.8vw, 1.45rem);   /* 18 → 23px */
   font-weight: 400;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  line-height: 1.55;
+  letter-spacing: 0;
   text-wrap: pretty;
+  max-width: 58ch;
 }
 .manifest__meta {
   margin-top: 2rem;
