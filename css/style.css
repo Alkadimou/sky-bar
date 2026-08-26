@@ -280,6 +280,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   transform: scaleX(0);
 }
 
+/* Il backdrop-filter dell'header crea un contenitore per i figli position:fixed
+   e confina l'overlay del menu nel box dell'header. Mentre il menu e' aperto
+   lo neutralizziamo: l'overlay torna a coprire l'intero viewport. */
+html.nav-lock .site-header {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 /* ---------- Nav mobile ---------- */
 .nav-toggle {
   display: none;
