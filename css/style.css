@@ -486,22 +486,27 @@ html.nav-lock .site-header {
   /* La prima schermata coincide con l'altezza dello schermo */
   .hero {
     min-height: 100svh;
-    padding-top: calc(58px + 1vh);
-    /* contenuto CENTRATO verticalmente: il vuoto si divide tra sopra e sotto
-       invece di accumularsi tutto in alto (prima era ancorato al fondo) */
-    align-items: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    /* clearance REALE: safe-area iOS + altezza header + respiro.
+       Il contenuto non puo' fisicamente risalire oltre questo punto. */
+    padding-top: calc(env(safe-area-inset-top) + 64px);
   }
 
-  /* Piu' aria tra il testo e i bordi: laterali e soprattutto in basso,
-     sopra la barra azioni fissa */
+  /*
+    Centratura a prova di trabocco (margini auto):
+    - se c'e' spazio libero -> si divide sopra/sotto (centrato)
+    - se il contenuto e' piu' alto dello spazio -> gli auto-margini
+      collassano a ZERO: il testo scorre in basso, MAI dietro l'header
+      (comportamento garantito dalle specifiche CSS)
+  */
   .hero__content {
+    margin-block: auto;
     padding-left: clamp(1.4rem, 6vw, 2.2rem);
     padding-right: clamp(1.4rem, 6vw, 2.2rem);
-    padding-bottom: calc(104px + env(safe-area-inset-bottom));
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
   }
 
-  /* la freccia di scroll resta nascosta dietro la barra fissa: su mobile non serve */
   .hero__scroll-cue { display: none; }
 }
 
