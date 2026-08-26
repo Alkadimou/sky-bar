@@ -459,7 +459,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   /* La prima schermata coincide con l'altezza dello schermo */
   .hero {
     min-height: 100svh;
-    padding-top: calc(58px + 1vh);   /* bordo superiore ridotto: tutto entra in schermo */
+    padding-top: calc(58px + 1vh);
+    /* contenuto CENTRATO verticalmente: il vuoto si divide tra sopra e sotto
+       invece di accumularsi tutto in alto (prima era ancorato al fondo) */
+    align-items: center;
+    align-content: center;
   }
 
   /* Piu' aria tra il testo e i bordi: laterali e soprattutto in basso,
@@ -469,6 +473,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
     padding-right: clamp(1.4rem, 6vw, 2.2rem);
     padding-bottom: calc(104px + env(safe-area-inset-bottom));
   }
+
+  /* la freccia di scroll resta nascosta dietro la barra fissa: su mobile non serve */
+  .hero__scroll-cue { display: none; }
 }
 
 @media (min-width: 861px) {
