@@ -456,17 +456,18 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 @media (max-width: 860px) {
   .hero__frame { display: none; }
   .hero__badge { display: none; }   /* il badge "Sabato è il nostro giorno" non compare su mobile */
-  /* Al primo caricamento l'hero lascia spazio esatto per il marquee
-     dentro la prima schermata (sopra la barra azioni fissa) */
+  /* La prima schermata coincide con l'altezza dello schermo */
   .hero {
-    min-height: calc(100svh - 140px);
+    min-height: 100svh;
     padding-top: calc(76px + 2vh);
   }
 
-  /* Piu' aria tra il testo e i bordi dello schermo */
+  /* Piu' aria tra il testo e i bordi: laterali e soprattutto in basso,
+     sopra la barra azioni fissa */
   .hero__content {
     padding-left: clamp(1.4rem, 6vw, 2.2rem);
     padding-right: clamp(1.4rem, 6vw, 2.2rem);
+    padding-bottom: calc(104px + env(safe-area-inset-bottom));
   }
 }
 
