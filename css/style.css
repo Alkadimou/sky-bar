@@ -218,14 +218,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
     0 22px 44px rgba(0, 0, 0, 0.65);
 }
 
-/* Mobile: il logo-medaglia non fa l'animazione di aggancio (su schermi piccoli
-   lo spostamento e' piu' fastidioso che elegante): parte gia' compatto */
+/* Mobile: stessa animazione del desktop (medaglia -> aggancio via --logo-s),
+   con dimensioni ridotte per lo schermo piccolo */
 @media (max-width: 860px) {
   .header__logo { width: 42px; height: 42px; }
-  .header__logo img {
-    --logo-s: 0 !important;   /* ignora la variabile animata dallo scroll */
-    width: clamp(58px, 9svh, 78px);
-  }
+  .header__logo img { width: calc(42px + (clamp(66px, 10svh, 88px) - 42px) * var(--logo-s)); }
 }
 
 .site-nav ul {
