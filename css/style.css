@@ -597,7 +597,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 /* ---------- Menu ---------- */
 .menu-section {
-  padding-top: calc(var(--space-section) * 0.55);
+  padding-top: calc(var(--space-section) * 0.55 + 74px);
   padding-bottom: var(--space-section);
   background: var(--bg-alt);
 }
@@ -707,7 +707,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 /* ---------- Domenica (momento firma) ---------- */
 .sabato {
   position: relative;
-  padding-top: calc(var(--space-section) * 0.55);   /* meno aria in alto */
+  padding-top: calc(var(--space-section) * 0.55 + 74px);   /* meno aria, ma extra 74px richiesto */
   padding-bottom: var(--space-section);
   overflow: clip;
   text-align: center;
@@ -741,7 +741,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 /* ---------- Galleria pellicola ---------- */
 .filmstrip {
-  padding-top: calc(var(--space-section) * 0.55);
+  padding-top: calc(var(--space-section) * 0.55 + 74px);
   padding-bottom: var(--space-section);
   background: var(--bg-alt);
   overflow: hidden;
