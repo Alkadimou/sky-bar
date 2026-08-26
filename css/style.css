@@ -455,13 +455,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 @media (max-width: 860px) {
   .hero__frame { display: none; }
-  .hero__badge {
-    display: inline-flex;
-    right: var(--gutter);
-    bottom: calc(88px + env(safe-area-inset-bottom));
-    font-size: 12px;
-    padding: 0.45rem 0.85rem;
-  }
+  .hero__badge { display: none; }   /* il badge "Sabato è il nostro giorno" non compare su mobile */
   /* Al primo caricamento l'hero lascia spazio esatto per il marquee
      dentro la prima schermata (sopra la barra azioni fissa) */
   .hero {
