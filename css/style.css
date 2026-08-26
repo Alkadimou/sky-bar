@@ -1028,6 +1028,13 @@ html.nav-lock .site-header {
 }
 .lightbox__close:hover { color: var(--gold-bright); }
 
+/* Safe area inferiore: il contenuto non tocca mai l'home indicator */
+.site-footer { padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+
+@media (max-width: 860px) {
+  .menu-grid { padding-bottom: calc(1.25rem + max(env(safe-area-inset-bottom), 0px)); }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
