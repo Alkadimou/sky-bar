@@ -22,9 +22,7 @@
     }
     if (!header) return;
     header.classList.toggle('is-scrolled', y > 40);
-    // nasconde in discesa veloce, rivela in salita
-    if (y > 300 && y > lastY + 6) header.classList.add('is-hidden');
-    else if (y < lastY - 6 || y < 120) header.classList.remove('is-hidden');
+    // l'header resta sempre visibile: nessun auto-hide
     lastY = y;
   }
 

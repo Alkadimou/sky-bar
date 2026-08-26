@@ -154,7 +154,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   backdrop-filter: blur(14px);
   border-bottom-color: var(--border-subtle);
 }
-.site-header.is-hidden { transform: translateY(-100%); }
+/* auto-hide rimosso: l'header deve restare sempre visibile */
 
 .header__inner {
   width: min(var(--container), 100% - var(--gutter) * 2);
