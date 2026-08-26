@@ -181,7 +181,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   top: 50%;
   left: 50%;
   transform: translate(-50%, -36%);
-  width: clamp(64px, 10.5svh, 94px);
+  width: clamp(84px, 13.5svh, 124px);
   height: auto;
   border-radius: 50%;
   background: var(--bg-primary);
@@ -197,7 +197,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 @media (max-width: 860px) {
   .header__logo { width: 42px; height: 42px; }
-  .header__logo img { width: clamp(54px, 8.5svh, 70px); }
+  .header__logo img { width: clamp(66px, 10svh, 88px); }
 }
 
 .site-nav ul {
