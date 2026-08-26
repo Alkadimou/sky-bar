@@ -691,13 +691,13 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 }
 
 /* ---------- Domenica (momento firma) ---------- */
-.domenica {
+.sabato {
   position: relative;
   padding-block: var(--space-section);
   overflow: clip;
   text-align: center;
 }
-.domenica__rays {
+.sabato__rays {
   position: absolute;
   inset: auto -20% -55% -20%;
   height: 130%;
@@ -706,23 +706,23 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
       rgba(233, 138, 112, 0.12) 0deg 4deg, transparent 4deg 11deg);
   pointer-events: none;
 }
-.domenica__content { position: relative; }
-.domenica h2 {
+.sabato__content { position: relative; }
+.sabato h2 {
   font-size: var(--fs-display-lg);
   letter-spacing: -0.02em;
 }
-.domenica h2 em {
+.sabato h2 em {
   font-style: italic;
   color: var(--carib-coral);
   font-variation-settings: "opsz" 60;
 }
-.domenica p {
+.sabato p {
   margin: 1.2rem auto 0;
   max-width: 56ch;
   color: var(--text-secondary);
   font-size: var(--fs-body-lg);
 }
-.domenica .btn { margin-top: 2rem; }
+.sabato .btn { margin-top: 2rem; }
 
 /* ---------- Galleria pellicola ---------- */
 .filmstrip {
@@ -1043,8 +1043,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 .timeline__item:last-child .timeline__time { color: var(--carib-coral); }
 .timeline__what { color: var(--text-secondary); font-size: var(--fs-small); line-height: 1.5; }
 
-.domenica__sub { color: var(--text-secondary); font-size: var(--fs-body-lg); margin-top: 0.8rem; }
-.domenica__note { margin-top: 0.9rem; color: var(--text-muted); font-size: var(--fs-small); }
+.sabato__sub { color: var(--text-secondary); font-size: var(--fs-body-lg); margin-top: 0.8rem; }
+.sabato__note { margin-top: 0.9rem; color: var(--text-muted); font-size: var(--fs-small); }
 
 @media (max-width: 980px) {
   .timeline { grid-template-columns: repeat(2, 1fr); }
