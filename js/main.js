@@ -28,22 +28,29 @@
 
   /* ---------- Menu mobile ---------- */
   const navToggle = document.querySelector('.nav-toggle');
-  const navDrawer = document.querySelector('.nav-drawer');
-  if (navToggle && navDrawer) {
+  const siteNav = document.querySelector('.site-nav');
+  if (navToggle && siteNav) {
+    const closeMenu = () => {
+      siteNav.classList.remove('is-open');
+      navToggle.classList.remove('is-active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Apri il menu di navigazione');
+      document.documentElement.classList.remove('nav-lock');
+    };
     navToggle.addEventListener('click', () => {
-      const open = navDrawer.classList.toggle('is-open');
+      const open = siteNav.classList.toggle('is-open');
       navToggle.classList.toggle('is-active', open);
       navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label',
+        open ? 'Chiudi il menu di navigazione' : 'Apri il menu di navigazione');
       document.documentElement.classList.toggle('nav-lock', open);
     });
-    navDrawer.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => {
-        navDrawer.classList.remove('is-open');
-        navToggle.classList.remove('is-active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.documentElement.classList.remove('nav-lock');
-      })
-    );
+    // chiude il menu quando si sceglie una voce
+    siteNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+    // chiude anche con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && siteNav.classList.contains('is-open')) closeMenu();
+    });
   }
 
   /* ---------- Lightbox ---------- */
