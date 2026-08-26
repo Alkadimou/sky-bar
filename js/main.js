@@ -118,9 +118,12 @@
         const t = document.querySelector(id);
         if (!t) return;
         e.preventDefault();
-        // atterra la sezione APPENA SOTTO l'header (altezza reale, sempre aggiornata)
+        // Lenis ignora scroll-margin-top del CSS: lo leggiamo e rispettiamo.
+        // L'ancora "chi siamo" ha un margine che include anche l'altezza della
+        // fascia scorrevole -> cliccando, la fascia resta VISIBILE sotto l'header.
         const hH = header ? header.offsetHeight : 70;
-        lenis.scrollTo(t, { offset: -hH - 6, duration: 1.4 });
+        const smt = parseFloat(getComputedStyle(t).scrollMarginTop || '0');
+        lenis.scrollTo(t, { offset: -(hH + smt + 6), duration: 1.4 });
       });
     });
   } else {
