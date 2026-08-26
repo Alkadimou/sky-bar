@@ -196,6 +196,24 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   backdrop-filter: blur(14px);
   border-bottom-color: var(--border-subtle);
 }
+
+/*
+  iOS Safari (navigazione normale): quando la barra indirizzi collassa,
+  la pagina scorre anche SOTTO la status bar e lì env(safe-area-inset-top)
+  vale 0 -> nessun padding puo' aiutare. Soluzione: estendere il fondo
+  dell'header 90px oltre il suo bordo superiore. La fascia resta sempre
+  dipinta, qualunque sia lo stato del browser.
+*/
+.site-header.is-scrolled::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -90px;
+  height: 90px;
+  background: rgba(14, 12, 10, 0.97);
+  pointer-events: none;
+}
 /* auto-hide rimosso: l'header deve restare sempre visibile */
 
 .header__inner {
@@ -1169,6 +1187,17 @@ html.nav-lock .site-header {
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
     border-top: 1px solid var(--border-subtle);
+  }
+  /* estende il fondo della barra sotto l'home indicator */
+  .mobile-actions::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    background: #0e0c0a;
+    pointer-events: none;
   }
   .mobile-actions .btn {
     flex: 1;
