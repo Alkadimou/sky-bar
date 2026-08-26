@@ -596,7 +596,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 }
 
 /* ---------- Menu ---------- */
-.menu-section { padding-block: var(--space-section); background: var(--bg-alt); }
+.menu-section {
+  padding-top: calc(var(--space-section) * 0.55);
+  padding-bottom: var(--space-section);
+  background: var(--bg-alt);
+}
 
 /* Una sola riga di card che scorre in orizzontale */
 .menu-grid {
@@ -737,7 +741,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 /* ---------- Galleria pellicola ---------- */
 .filmstrip {
-  padding-block: var(--space-section);
+  padding-top: calc(var(--space-section) * 0.55);
+  padding-bottom: var(--space-section);
   background: var(--bg-alt);
   overflow: hidden;
 }
