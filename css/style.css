@@ -457,24 +457,26 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 }
 
 @media (min-width: 861px) {
-  /* Cornice proporzionata: ~62% dello spazio verticale libero (mai gigante) */
-  .hero__frame {
-    height: clamp(
+  /* Dimensioni cornice derivate dall'altezza viewport (video 9:16) */
+  .hero {
+    --frame-h: clamp(
       340px,
       calc((100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)) * 0.68),
       690px
     );
-    right: clamp(1.5rem, 6vw, 5rem);
+    --frame-w: calc(var(--frame-h) * 0.5625);
+    /* distanza tra contenuto e bordo finestra */
+    --mr: max(var(--gutter), calc((100vw - var(--container)) / 2));
   }
-  /* Il testo riserva esattamente la larghezza della cornice + respiro */
-  /* Il testo riserva la larghezza della cornice + un respiro ridotto:
-     così la cornice (ancorata al bordo) cade a metà dello spazio vuoto */
+  /* Cornice centrata ESATTAMENTE nello spazio tra testo e bordo:
+     sporge dal contenitore di metà margine -> distanze simmetriche */
+  .hero__frame {
+    height: var(--frame-h);
+    width: var(--frame-w);
+    right: calc(var(--mr) / -2);
+  }
   .hero__content {
-    padding-right: calc(
-      clamp(320px, calc((100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)) * 0.62), 640px)
-      * 0.5625
-      + clamp(1.75rem, 4.5vw, 3.25rem)
-    );
+    padding-right: calc(var(--frame-w) + var(--mr) / 2);
   }
   .hero__badge { display: none; }
 }
