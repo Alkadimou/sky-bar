@@ -693,7 +693,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 /* ---------- Domenica (momento firma) ---------- */
 .sabato {
   position: relative;
-  padding-block: var(--space-section);
+  padding-top: calc(var(--space-section) * 0.55);   /* meno aria in alto */
+  padding-bottom: var(--space-section);
   overflow: clip;
   text-align: center;
 }
