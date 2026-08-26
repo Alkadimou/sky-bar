@@ -182,7 +182,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   left: 50%;
   transform: translate(-50%, -36%);
   max-width: none;   /* essenziale: senza questo, max-width:100% del reset lo cappa a 46px */
-  width: clamp(168px, 27svh, 248px);
+  width: clamp(84px, 13.5svh, 124px);
   height: auto;
   border-radius: 50%;
   background: var(--bg-primary);
@@ -198,7 +198,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 @media (max-width: 860px) {
   .header__logo { width: 42px; height: 42px; }
-  .header__logo img { width: clamp(132px, 20svh, 176px); }
+  .header__logo img { width: clamp(66px, 10svh, 88px); }
 }
 
 .site-nav ul {
