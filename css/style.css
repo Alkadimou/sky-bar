@@ -181,6 +181,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   top: 50%;
   left: 50%;
   transform: translate(-50%, -36%);
+  max-width: none;   /* essenziale: senza questo, max-width:100% del reset lo cappa a 46px */
   width: clamp(168px, 27svh, 248px);
   height: auto;
   border-radius: 50%;
