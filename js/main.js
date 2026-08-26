@@ -118,7 +118,9 @@
         const t = document.querySelector(id);
         if (!t) return;
         e.preventDefault();
-        lenis.scrollTo(t, { offset: -70, duration: 1.4 });
+        // atterra la sezione APPENA SOTTO l'header (altezza reale, sempre aggiornata)
+        const hH = header ? header.offsetHeight : 70;
+        lenis.scrollTo(t, { offset: -hH - 6, duration: 1.4 });
       });
     });
   } else {
