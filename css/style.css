@@ -730,13 +730,21 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   background: var(--bg-alt);
   overflow: hidden;
 }
-.filmstrip__viewport { overflow: visible; }
+/* Striscia scorrevole nativa come il menu: mai sequestro dello scroll verticale */
+.filmstrip__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+.filmstrip__viewport::-webkit-scrollbar { display: none; }
 .filmstrip__track {
   display: flex;
   gap: 1.4rem;
   width: max-content;
   padding-inline: var(--gutter);
-  will-change: transform;
 }
 .film-card {
   flex: 0 0 auto;
@@ -745,6 +753,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 .film-card:nth-child(3n + 1) { height: 400px; }
 .film-card:nth-child(3n + 2) { height: 320px; margin-top: 40px; }
 .film-card:nth-child(3n) { height: 360px; margin-top: 16px; }
+.film-card { scroll-snap-align: center; }
 .film-card figure {
   height: calc(100% - 34px);
   border-radius: 14px;

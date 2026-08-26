@@ -167,24 +167,6 @@
         scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
 
-  /* ---------- Galleria pellicola: scroll verticale -> striscia orizzontale (desktop) ---------- */
-  const strip = document.querySelector('.filmstrip__track');
-  if (strip && window.matchMedia('(min-width: 861px)').matches) {
-    const getAmount = () => Math.max(0, strip.scrollWidth - window.innerWidth + 96);
-    gsap.to(strip, {
-      x: () => -getAmount(),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.filmstrip',
-        start: 'top top',
-        end: () => '+=' + getAmount(),
-        pin: true,
-        scrub: 0.6,
-        invalidateOnRefresh: true,
-      },
-    });
-  }
-
   /* ---------- Marquee (fascia testo scorrevole): pausa fuori schermo ---------- */
   document.querySelectorAll('.marquee__inner').forEach((m) => {
     gsap.to(m, {
