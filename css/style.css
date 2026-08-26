@@ -473,17 +473,22 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
     --frame-w: calc(var(--frame-h) * 0.5625);   /* video 9:16 */
   }
 
+  /* DUE colonne identiche: la cornice centrata nella colonna destra
+     cade esattamente a meta' tra fine-testo e bordo destro */
   .hero__content {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: end;
     width: 100%;
     max-width: none;
     padding-left: var(--gutter);
-    padding-right: 0;                 /* la colonna vuota tocca il bordo */
+    padding-right: 0;
   }
 
-  .hero__text { padding-bottom: clamp(1.75rem, 4.5vh, 3.5rem); }
+  .hero__text {
+    padding-right: clamp(1rem, 3vw, 3rem);
+    padding-bottom: clamp(1.75rem, 4.5vh, 3.5rem);
+  }
 
   .hero__frame {
     position: static;
