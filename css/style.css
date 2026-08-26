@@ -280,7 +280,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   align-content: end;
   overflow: clip;
   /* clearance per l'header fisso: il contenuto non gli passa mai sotto */
-  padding-top: calc(84px + 3vh);
+  padding-top: calc(76px + 2vh);
 }
 
 .hero__bg {
@@ -301,7 +301,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   z-index: -1;
   left: auto;
   right: clamp(1.5rem, 6vw, 5rem);
-  bottom: clamp(4.5rem, 10vh, 7rem);
+  bottom: clamp(3.25rem, 7vh, 5.5rem);
   transform: none;
   height: min(52svh, 580px);           /* mai più alta di metà pagina */
   aspect-ratio: 576 / 1024;
@@ -327,16 +327,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   pointer-events: none;
 }
 
-.hero__content { position: relative; z-index: 1; padding-bottom: clamp(3rem, 8vh, 6rem); }
+.hero__content { position: relative; z-index: 1; padding-bottom: clamp(1.75rem, 4.5vh, 3.5rem); }
 
 .hero__eyebrow { margin-bottom: 1rem; }
 
 .hero__title {
-  font-size: var(--fs-display-xl);
+  /* min(8vw, 11.5svh): il titolo si riduce anche quando manca ALTEZZA */
+  font-size: clamp(2.6rem, min(8vw, 11.5svh), 7rem);
   font-variation-settings: "opsz" 144;
   font-weight: 560;
   letter-spacing: -0.02em;
-  line-height: 1.02;
+  line-height: 1.04;
   text-wrap: balance;
   max-width: 12ch;
 }
@@ -344,7 +345,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 .hero__line span { display: inline-block; will-change: transform; }
 
 .hero__sub {
-  margin-top: 1.25rem;
+  margin-top: 0.9rem;
   font-size: var(--fs-body-lg);
   color: var(--text-secondary);
   max-width: 46ch;
@@ -354,7 +355,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .btn {
@@ -386,7 +387,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 .hero__badge {
   position: absolute;
   right: clamp(1rem, 4vw, 3rem);
-  bottom: clamp(4.5rem, 10vh, 7rem);
+  bottom: clamp(3.25rem, 7vh, 5.5rem);
   z-index: 1;
   display: inline-flex;
   align-items: center;
@@ -422,13 +423,13 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 @media (min-width: 861px) {
   /* La cornice riempie lo spazio verticale libero tra header e fondo hero */
   .hero__frame {
-    height: min(calc(100svh - 84px - clamp(4.5rem, 10vh, 7rem)), 760px);
+    height: min(calc(100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)), 760px);
     right: clamp(1.5rem, 6vw, 5rem);
   }
   /* Il testo riserva esattamente la larghezza della cornice + respiro */
   .hero__content {
     padding-right: calc(
-      min(calc(100svh - 84px - clamp(4.5rem, 10vh, 7rem)), 760px) * 0.5625
+      min(calc(100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)), 760px) * 0.5625
       + clamp(3rem, 9vw, 7rem)
     );
   }
@@ -904,7 +905,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 
 /* ---------- Hero microcopy ---------- */
 .hero__hours {
-  margin-top: 1.1rem;
+  margin-top: 0.8rem;
   font-size: var(--fs-small);
   color: var(--text-muted);
   letter-spacing: 0.04em;
