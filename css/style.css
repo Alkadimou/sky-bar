@@ -166,11 +166,38 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   padding-block: 0.7rem;
 }
 
+/* Logo-medaglia: lo slot di layout resta compatto (l'header non cambia altezza),
+   l'immagine sborda sotto il bordo dell'header come in rilievo */
+.header__logo {
+  position: relative;
+  z-index: 1200;
+  width: 46px;
+  height: 46px;
+  display: block;
+  pointer-events: none;
+}
 .header__logo img {
-  width: 44px;
-  height: 44px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -36%);
+  width: clamp(64px, 10.5svh, 94px);
+  height: auto;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35);
+  background: var(--bg-primary);
+  box-shadow:
+    0 0 0 2px rgba(212, 175, 55, 0.45),
+    0 18px 36px rgba(0, 0, 0, 0.55);
+  pointer-events: auto;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.3s ease;
+}
+.header__logo:hover img {
+  transform: translate(-50%, -36%) scale(1.05) rotate(-5deg);
+}
+
+@media (max-width: 860px) {
+  .header__logo { width: 42px; height: 42px; }
+  .header__logo img { width: clamp(54px, 8.5svh, 70px); }
 }
 
 .site-nav ul {
