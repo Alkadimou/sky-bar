@@ -162,6 +162,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
     border-color 0.35s ease, backdrop-filter 0.35s ease;
   border-bottom: 1px solid transparent;
 }
+/* Safe-area iOS: quando Safari collassa la sua barra la pagina va full-screen;
+   l'header si estende fino in cima ma il suo CONTENUTO resta sotto la status bar */
+.site-header { padding-top: env(safe-area-inset-top); }
+
 .site-header.is-scrolled {
   background: rgba(14, 12, 10, 0.72);
   -webkit-backdrop-filter: blur(14px);
