@@ -457,27 +457,43 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 }
 
 @media (min-width: 861px) {
-  /* Dimensioni cornice derivate dall'altezza viewport (video 9:16) */
+  /*
+    Geometria deterministica:
+    .hero__content = grid [ 1fr | auto | 1fr ] su TUTTA la larghezza finestra.
+    Colonna 1: testo. Colonna 2: cornice. Colonna 3: vuota.
+    Le due colonne esterne sono minmax(0,1fr) => SEMPRE identiche,
+    quindi la cornice cade esattamente a meta' tra fine-testo e bordo destro.
+  */
   .hero {
     --frame-h: clamp(
-      340px,
-      calc((100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)) * 0.68),
-      690px
+      380px,
+      calc((100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)) * 0.85),
+      820px
     );
-    --frame-w: calc(var(--frame-h) * 0.5625);
-    /* distanza tra contenuto e bordo finestra */
-    --mr: max(var(--gutter), calc((100vw - var(--container)) / 2));
+    --frame-w: calc(var(--frame-h) * 0.5625);   /* video 9:16 */
   }
-  /* Cornice centrata ESATTAMENTE nello spazio tra testo e bordo:
-     sporge dal contenitore di metà margine -> distanze simmetriche */
+
+  .hero__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: end;
+    width: 100%;
+    max-width: none;
+    padding-left: var(--gutter);
+    padding-right: 0;                 /* la colonna vuota tocca il bordo */
+  }
+
+  .hero__text { padding-bottom: clamp(1.75rem, 4.5vh, 3.5rem); }
+
   .hero__frame {
+    position: static;
     height: var(--frame-h);
     width: var(--frame-w);
-    right: calc(var(--mr) / -2);
+    transform: none;
+    margin-bottom: clamp(3.25rem, 7vh, 5.5rem);
+    justify-self: center;
   }
-  .hero__content {
-    padding-right: calc(var(--frame-w) + var(--mr) / 2);
-  }
+
   .hero__badge { display: none; }
 }
 
