@@ -315,14 +315,18 @@ html.nav-lock .site-header {
   .nav-toggle { display: flex; }
   .site-nav {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
     background: var(--bg-primary);
     display: grid;
     place-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
   }
+  .site-nav.is-open { transition: opacity 0.25s ease; }
   .site-nav.is-open { opacity: 1; visibility: visible; }
   .site-nav ul { flex-direction: column; text-align: center; gap: 1.6rem; }
   .site-nav a { font-family: var(--font-display); font-size: 34px; text-transform: none; letter-spacing: 0; }

@@ -30,20 +30,32 @@
   const navToggle = document.querySelector('.nav-toggle');
   const siteNav = document.querySelector('.site-nav');
   if (navToggle && siteNav) {
+    let closeTimer = null;
+    // Apertura in DUE FASI per evitare lo scatto: 1) via il blur dell'header
+    // mentre il menu e' ancora invisibile; 2) doppio rAF -> compare gia' al
+    // posto giusto. In chiusura: svanisce al suo posto, il blur torna dopo.
     const closeMenu = () => {
+      if (!siteNav.classList.contains('is-open')) return;
       siteNav.classList.remove('is-open');
       navToggle.classList.remove('is-active');
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Apri il menu di navigazione');
-      document.documentElement.classList.remove('nav-lock');
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        document.documentElement.classList.remove('nav-lock');
+      }, 380);   /* dopo la dissolvenza (0.35s) */
     };
     navToggle.addEventListener('click', () => {
-      const open = siteNav.classList.toggle('is-open');
-      navToggle.classList.toggle('is-active', open);
-      navToggle.setAttribute('aria-expanded', String(open));
-      navToggle.setAttribute('aria-label',
-        open ? 'Chiudi il menu di navigazione' : 'Apri il menu di navigazione');
-      document.documentElement.classList.toggle('nav-lock', open);
+      const isOpen = siteNav.classList.contains('is-open');
+      if (isOpen) { closeMenu(); return; }
+      clearTimeout(closeTimer);
+      navToggle.classList.add('is-active');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Chiudi il menu di navigazione');
+      document.documentElement.classList.add('nav-lock');       /* fase 1 */
+      requestAnimationFrame(() => requestAnimationFrame(() => { /* fase 2 */
+        siteNav.classList.add('is-open');
+      }));
     });
     // chiude il menu quando si sceglie una voce
     siteNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
