@@ -712,6 +712,7 @@ html.nav-lock .site-header {
 }
 .menu-item__dots {
   flex: 1;
+  max-width: 2.5rem;   /* accorcia il tratto: nome e prezzo piu' vicini */
   border-bottom: 1px dotted rgba(184, 171, 151, 0.4);
   transform: translateY(-4px);
   min-width: 1.5rem;
