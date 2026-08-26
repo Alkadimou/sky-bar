@@ -274,7 +274,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 92svh;
+  min-height: 100svh;   /* la prima schermata coincide con l'intera finestra */
   display: grid;
   align-items: end;
   align-content: end;
