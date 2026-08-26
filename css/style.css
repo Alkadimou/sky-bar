@@ -588,10 +588,23 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 /* ---------- Menu ---------- */
 .menu-section { padding-block: var(--space-section); background: var(--bg-alt); }
 
+/* Una sola riga di card che scorre in orizzontale */
 .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 1.25rem;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;              /* Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+.menu-grid::-webkit-scrollbar { display: none; }   /* Chrome/Safari */
+
+.menu-grid .menu-card {
+  flex: 0 0 auto;
+  width: clamp(300px, 30vw, 380px);
+  scroll-snap-align: start;
 }
 .menu-card {
   background: var(--surface);
@@ -673,8 +686,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   text-align: center;
 }
 
-@media (max-width: 1080px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 700px) { .menu-grid { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+  .menu-grid .menu-card { width: min(82vw, 340px); }
+}
 
 /* ---------- Domenica (momento firma) ---------- */
 .domenica {
