@@ -460,18 +460,20 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
   /* Cornice proporzionata: ~62% dello spazio verticale libero (mai gigante) */
   .hero__frame {
     height: clamp(
-      320px,
-      calc((100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)) * 0.62),
-      640px
+      340px,
+      calc((100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)) * 0.68),
+      690px
     );
     right: clamp(1.5rem, 6vw, 5rem);
   }
   /* Il testo riserva esattamente la larghezza della cornice + respiro */
+  /* Il testo riserva la larghezza della cornice + un respiro ridotto:
+     così la cornice (ancorata al bordo) cade a metà dello spazio vuoto */
   .hero__content {
     padding-right: calc(
       clamp(320px, calc((100svh - 84px - clamp(3.25rem, 7vh, 5.5rem)) * 0.62), 640px)
       * 0.5625
-      + clamp(3rem, 9vw, 7rem)
+      + clamp(1.75rem, 4.5vw, 3.25rem)
     );
   }
   .hero__badge { display: none; }
