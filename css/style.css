@@ -794,7 +794,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 480; line-height: 1.
 }
 
 /* ---------- Info pratiche ---------- */
-.info { padding-block: var(--space-section); }
+.info { padding-block: calc(var(--space-section) * 0.55); }
 .info__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
