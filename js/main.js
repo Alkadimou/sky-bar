@@ -123,7 +123,9 @@
         // fascia scorrevole -> cliccando, la fascia resta VISIBILE sotto l'header.
         const hH = header ? header.offsetHeight : 70;
         const smt = parseFloat(getComputedStyle(t).scrollMarginTop || '0');
-        lenis.scrollTo(t, { offset: -(hH + smt + 6), duration: 1.4 });
+        // extra opzionale per sezione (data-scroll-extra="px"): scende oltre la quota standard
+        const extra = parseFloat(t.dataset.scrollExtra || '0');
+        lenis.scrollTo(t, { offset: -(hH + smt + 6 - extra), duration: 1.4 });
       });
     });
   } else {

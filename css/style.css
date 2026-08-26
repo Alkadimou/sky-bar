@@ -88,6 +88,10 @@ img, video { max-width: 100%; display: block; }
 
 /* Le ancore di navigazione atterrano subito sotto l'header fisso */
 main section[id] { scroll-margin-top: calc(84px + 6px); }
+main section[id][data-scroll-extra] {
+  /* il valore dell'attributo non e' leggibile in CSS: uso lo stesso 74px */
+  scroll-margin-top: calc(84px + 6px - 74px);
+}
 
 /* Ancora "chi siamo": la FASCIA scorrevole atterra incollata sotto l'header */
 #manifesto {
