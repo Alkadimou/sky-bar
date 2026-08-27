@@ -92,7 +92,7 @@
 - **Kicker**: Cocktail bar & pub · Centro storico di Arezzo
 - **H1**: L'eleganza di Arezzo vista dall'alto.
 - **Sub**: Un pub dall'anima dominicana nel cuore di Arezzo: mojito fatti a regola d'arte, rum vero e i grandi classici della mixology. Dal caffè delle sei alla chiusura delle due, ogni giorno.
-- **CTA primaria**: `Chiama ora · 340 194 2471`
+- **CTA primaria**: `Chiama ora · 350 193 5739`
 - **CTA secondaria**: `Scopri il menu`
 - **Link tertiaire ghost**: `Come arrivare ↓`
 - **Microcopy sotto le CTA**: Tutti i giorni dalle 6:00 · venerdì e weekend fino alle 2:00
@@ -114,7 +114,7 @@
   - Metà giornata — *Si rallenta: giornali, chiacchiere, ricarica.*
   - Tramonto — *L'aperitivo: il banco si accende.*
   - Fino alle 02:00 — *La notte: rum, musica e compagnia.*
-- **CTA**: `Chiama · 340 194 2471` — microcopy: *"Gruppi numerosi? Una chiamata basta."*
+- **CTA**: `Chiama · 350 193 5739` — microcopy: *"Gruppi numerosi? Una chiamata basta."*
 
 ### MENU — "Il menu"
 - **H2**: Il menu.
@@ -172,7 +172,7 @@
 - **Orari**:
   - Lunedì – Venerdì · **06:00 – 24:00**
   - Sabato – Domenica · **06:00 – 02:00**
-- **Telefono**: 340 194 2471 *(link `tel:`)*
+- **Telefono**: 350 193 5739 *(link `tel:`)*
 - **Instagram**: [@skybar_02](https://www.instagram.com/skybar_02)
 - **Riga di onestà (prenotazioni)**: Niente prenotazioni online: ci trovi di persona o al telefono. Per gruppi, una chiamata basta.
 - **CTA**: `Chiama ora` · `Indicazioni stradali`
@@ -198,7 +198,7 @@
 | Galleria | `#galleria` |
 | Dove siamo | `#info` |
 
-- **CTA principale (bottone, destra)**: `Chiama ora · 340 194 2471` → `tel:+393401942471`
+- **CTA principale (bottone, destra)**: `Chiama ora · 350 193 5739` → `tel:+393501935739`
 - **Perché il telefono e non "indicazioni"**: è l'unica azione che converte in visita reale (prenotazione/gruppo/domanda) e distingue il locale da qualsiasi concorrente "solo mappa". Le indicazioni restano come azione secondaria nelle Info pratiche e nella barra mobile.
 - **Mobile**: hamburger → overlay a schermo intero con le 5 voci + bottone `Chiama ora` fisso in basso (thumb zone). Scroll-spy per evidenziare la sezione corrente.
 
@@ -282,7 +282,7 @@ Campi da compilare prima del deploy: URL definitivo, CAP, coordinate geo, URL im
 
 **aria-label**:
 - Toggle menu mobile: `Apri il menu di navigazione` / `Chiudi il menu di navigazione`
-- CTA telefono: `Chiama lo Sky Bar: 340 194 2471`
+- CTA telefono: `Chiama lo Sky Bar: 350 193 5739`
 - Link Instagram: `Profilo Instagram dello Sky Bar, @skybar_02 (apre in nuova finestra)`
 - Regione mappa: `Mappa: Sky Bar, Via Margaritone 28/A, Arezzo`
 - Frecce carosello: `Foto precedente` / `Foto successiva`
