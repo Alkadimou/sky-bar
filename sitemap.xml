@@ -9,8 +9,8 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://skybarar.it/menu/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://skybarar.it/menu/"/>
+    <loc>https://skybarar.it/menu.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://skybarar.it/menu.html"/>
     <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
